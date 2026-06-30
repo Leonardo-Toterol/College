@@ -1,6 +1,9 @@
+package Classes;
+
 public class ProdutoPedido {
-    Produto produto;
-    int quantidade;
+
+    private Produto produto;
+    private int quantidade;
 
     public ProdutoPedido(Produto produto, int quantidade) {
         this.produto = produto;
@@ -25,7 +28,7 @@ public class ProdutoPedido {
 
     @Override
     public String toString() {
-        return "ProdutoPedido{" +
+        return "Classes.ProdutoPedido{" +
                 "produto=" + produto +
                 ", quantidade=" + quantidade +
                 '}';

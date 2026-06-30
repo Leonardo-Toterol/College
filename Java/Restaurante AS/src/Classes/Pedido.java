@@ -1,17 +1,27 @@
+package Classes;
+
 import java.util.ArrayList;
 
 public class Pedido {
 
-    Cliente cliente;
-    ArrayList<ProdutoPedido> itens;
-    String status;
-    double total;
+    private int id;
+    private Cliente cliente;
+    private ArrayList<ProdutoPedido> itens;
+    private String status;
+    private double total;
+
+    private static int proximoId = 1;
 
     public Pedido(Cliente cliente, ArrayList<ProdutoPedido> itens, String status, double total) {
+        this.id = proximoId++;
         this.cliente = cliente;
         this.itens = itens;
         this.status = status;
         this.total = total;
+    }
+
+    public int getId(){
+        return id;
     }
 
     public Cliente getCliente() {
@@ -48,7 +58,7 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pedido{" +
+        return "Classes.Pedido{" +
                 "cliente=" + cliente +
                 ", itens=" + itens +
                 ", status='" + status + '\'' +

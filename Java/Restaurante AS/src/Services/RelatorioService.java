@@ -1,3 +1,9 @@
+package Services;
+import Classes.Pedido;
+import Classes.Cliente;
+import Classes.ProdutoPedido;
+import Classes.Produto;
+
 public class RelatorioService {
 
     private ClienteService clienteService;
@@ -35,6 +41,14 @@ public class RelatorioService {
                     break;
                 case 2:
                     listarCardapio();
+                    break;
+                case 3:
+                    listarPedido();
+                    break;
+                case 0:
+                    break;
+                default:
+                    IO.println("Opção incorreta, tente novamente.");
             }
         } while ( r != 0);
     }
@@ -42,7 +56,7 @@ public class RelatorioService {
     public void listarCliente(){
 
         for (int i = 0; i < clienteService.getClientes().size(); i++) {
-            System.out.println("Cliente " + i + " " + clienteService.getClientes().get(i));
+            System.out.println("Classes.Cliente " + i + " " + clienteService.getClientes().get(i));
             
         }
     }
@@ -50,8 +64,32 @@ public class RelatorioService {
     public void listarCardapio(){
 
         for (int i = 0; i < cardapioService.getProdutos().size(); i++) {
-            System.out.println("Produto " + i + " " + cardapioService.getProdutos().get(i));
+            System.out.println("Classes.Produto " + i + " " + cardapioService.getProdutos().get(i));
 
+        }
+    }
+
+    public void listarPedido() {
+
+        for (int i = 0; i < pedidoService.getPedidos().size(); i++) {
+            Pedido pedido = pedidoService.getPedidos().get(i);
+
+            IO.println("\n");
+            IO.println("Classes.Pedido " + (i + 1));
+            IO.println("Classes.Cliente: " + pedido.getCliente().getNome());
+            IO.println("Status: " + pedido.getStatus());
+            IO.println("Total: R$ " + pedido.getTotal());
+            IO.println("Itens:\n");
+
+            for (int j = 0; j < pedido.getItens().size(); j++) {
+
+                ProdutoPedido item = pedido.getItens().get(j);
+
+                IO.println("- " +
+                        item.getProduto().getNome() +
+                        " | Quantidade: " + item.getQuantidade() +
+                        " | Valor Unitário: R$ " + item.getProduto().getPreco());
+            }
         }
     }
 }

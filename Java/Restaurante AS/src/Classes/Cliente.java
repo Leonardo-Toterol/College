@@ -1,9 +1,11 @@
+package Classes;
+
 public class Cliente {
 
-    int id;
-    String cpf;
-    String nome;
-    String telefone;
+    private int id;
+    private String cpf;
+    private String nome;
+    private String telefone;
 
     private static  int proximoId = 1;
 
@@ -54,7 +56,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
+        return "Classes.Cliente{" +
                 "cpf='" + cpf + '\'' +
                 ", nome='" + nome + '\'' +
                 ", telefone='" + telefone + '\'' +

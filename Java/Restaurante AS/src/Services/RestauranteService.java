@@ -1,4 +1,4 @@
-
+package Services;
 
 public class RestauranteService {
 
@@ -13,7 +13,7 @@ public class RestauranteService {
 
         int r;
         do {
-            System.out.println("Dom Juan's\n\nDigite a opcao desejada:\n1 - Menu Clientes\n2 - Menu Cardápio\n3 - Menu Pedido\n4 - Relatórios\n0 - Sair\n");
+            System.out.println("Dom Juan's\n\nDigite a opcao desejada:\n1 - Menu Clientes\n2 - Menu Cardápio\n3 - Menu Classes.Pedido\n4 - Relatórios\n0 - Sair\n");
 
             r = Integer.parseInt(IO.readln("Digite a opção desejada: "));
             switch (r) {
@@ -21,10 +21,10 @@ public class RestauranteService {
                     this.clienteService.inicio();
                     break;
                 case 2:
-                    this.editar(livro);
+                    this.cardapioService.inicio();
                     break;
                 case 3:
-                    this.remover(livro);
+                    this.pedidoService.inicio();
                     break;
                 case 4:
                     this.relatorioService.inicio();

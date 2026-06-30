@@ -1,13 +1,15 @@
+package Classes;
+
 public class Produto {
 
-    int id;
-    String nome;
-    Double preco;
-    Boolean disponivel;
+    private int id;
+    private String nome;
+    private double preco;
+    private boolean disponivel;
 
     private static  int proximoId = 1;
 
-    public Produto(String nome, Double preco, Boolean disponivel) {
+    public Produto(String nome, double preco, boolean disponivel) {
         this.id = proximoId;
         proximoId++;
         this.nome = nome;
@@ -31,25 +33,33 @@ public class Produto {
         this.nome = nome;
     }
 
-    public Double getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(Double preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
 
-    public Boolean getDisponivel() {
+    public boolean isDisponivel() {
         return disponivel;
     }
 
-    public void setDisponivel(Boolean disponivel) {
+    public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
+    }
+
+    public static int getProximoId() {
+        return proximoId;
+    }
+
+    public static void setProximoId(int proximoId) {
+        Produto.proximoId = proximoId;
     }
 
     @Override
     public String toString() {
-        return "Produto{" +
+        return "Classes.Produto{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", preco=" + preco +
