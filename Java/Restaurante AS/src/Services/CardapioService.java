@@ -16,7 +16,7 @@ public class CardapioService {
 
         int r;
         do {
-            System.out.println("Menu Cardápio\n\nDigite a opcao desejada:\n1 - Adicionar Produto\n2 - Editar Produto\n3 - Remover Produto\n0 - Sair\n");
+            IO.println("Menu Cardápio\n\nDigite a opcao desejada:\n1 - Adicionar Produto\n2 - Editar Produto\n3 - Remover Produto\n0 - Sair\n");
 
             r = Integer.parseInt(IO.readln("Digite a opção desejada: "));
             switch (r) {
@@ -80,11 +80,6 @@ public class CardapioService {
             }
         }
 
-        if (produtoEscolhido == null) {
-            IO.println("Classes.Produto não encontrado.");
-            return;
-        }
-
         String nome = IO.readln("Digite o novo nome: ");
         double preco = Double.parseDouble(IO.readln("Digite o novo preço: "));
 
@@ -100,7 +95,7 @@ public class CardapioService {
             } else if (r == 2) {
                 disponivel = false;
             } else {
-                IO.println("Opção inválida.");
+                IO.println("Opção incorreta, tente novamente.");
             }
 
         } while (r != 1 && r != 2);
@@ -109,7 +104,7 @@ public class CardapioService {
         produtoEscolhido.setPreco(preco);
         produtoEscolhido.setDisponivel(disponivel);
 
-        IO.println("Classes.Produto editado com sucesso!");
+        IO.println("Produto editado.");
     }
 
     public void removerProduto(){
@@ -129,14 +124,9 @@ public class CardapioService {
             }
         }
 
-        if (produtoEscolhido == null) {
-            IO.println("Classes.Produto não enocntrado.");
-            return;
-        }
-
         produtos.remove(produtoEscolhido);
 
-        IO.println("Classes.Produto removido com sucesso!");
+        IO.println("Produto removido.");
     }
 }
 

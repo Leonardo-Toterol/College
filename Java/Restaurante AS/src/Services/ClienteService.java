@@ -13,11 +13,12 @@ public class ClienteService {
         return clientes;
     }
 
+
     public void inicio() {
 
         int r;
         do {
-            System.out.println("Menu Classes.Cliente\n\nDigite a opcao desejada:\n1 - Adicionar Cliente\n2 - Editar Cliente\n3 - Cliente\n0 - Sair\n");
+            IO.println("Menu Classes.Cliente\n\nDigite a opcao desejada:\n1 - Adicionar Cliente\n2 - Editar Cliente\n3 - remover Cliente\n0 - Sair\n");
 
             r = Integer.parseInt(IO.readln("Digite a opção desejada: "));
             switch (r) {
@@ -46,9 +47,8 @@ public class ClienteService {
             cpf = IO.readln("Qual o CPF do cliente? ");
 
             if (cpf.length() != 11) {
-                IO.println("CPF inválido, tente novamente.");
+                IO.println("CPF incorreto, tente novamente.");
             }
-
         } while (cpf.length() != 11);
 
         IO.println("CPF registrado.");
@@ -65,7 +65,7 @@ public class ClienteService {
     public void editarCliente(){
 
         for (int i = 0; i < clientes.size(); i++) {
-            IO.println("Classes.Cliente " + i + " " + clientes.get(i));
+            IO.println("Cliente " + i + " " + clientes.get(i));
 
         }
 
@@ -79,10 +79,6 @@ public class ClienteService {
                 break;
             }
         }
-            if (clienteEscolhido == null) {
-            IO.println("Classes.Cliente não encontrado, tente novamente.");
-            return;
-            }
 
             String cpf;
 
@@ -90,7 +86,7 @@ public class ClienteService {
                 cpf = IO.readln("Qual o CPF do cliente? ");
 
                 if (cpf.length() != 11) {
-                    IO.println("CPF inválido, tente novamente.");
+                    IO.println("CPF incorreto, tente novamente.");
                 }
 
             } while (cpf.length() != 11);
@@ -103,14 +99,14 @@ public class ClienteService {
             clienteEscolhido.setNome(nome);
             clienteEscolhido.setTelefone(telefone);
 
-            IO.println("Classes.Cliente editado com sucesso.");
+            IO.println("Cliente editado.");
 
         }
 
     public void removerCliente(){
 
         for (int i = 0; i < clientes.size(); i++) {
-            IO.println("Classes.Cliente " + i + " " + clientes.get(i));
+            IO.println("Cliente " + i + " " + clientes.get(i));
 
         }
 
@@ -125,14 +121,9 @@ public class ClienteService {
             }
         }
 
-        if (clienteEscolhido == null) {
-            IO.println("Classes.Cliente não encontrado.");
-            return;
-        }
-
         clientes.remove(clienteEscolhido);
 
-        IO.println("Classes.Cliente removido com sucesso!");
+        IO.println("Cliente removido,");
     }
 
     }

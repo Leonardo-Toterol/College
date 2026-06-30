@@ -1,13 +1,15 @@
 package Classes;
+import Observer.Observador;
+import Classes.Pedido;
 
-public class Cliente {
+public class Cliente implements Observador {
 
     private int id;
     private String cpf;
     private String nome;
     private String telefone;
 
-    private static  int proximoId = 1;
+    private static  int proximoId = 0;
 
     public Cliente(String cpf, String nome, String telefone) {
         this.id = proximoId;
@@ -57,9 +59,16 @@ public class Cliente {
     @Override
     public String toString() {
         return "Classes.Cliente{" +
+                "id=" + id +
                 "cpf='" + cpf + '\'' +
                 ", nome='" + nome + '\'' +
                 ", telefone='" + telefone + '\'' +
                 '}';
+    }
+
+    @Override
+    public void atualizar(Pedido pedido){
+        IO.println("\nAviso para " + nome + "Seu pedido foi atualizado para " + pedido.getStatus());
+        IO.println("\n");
     }
 }

@@ -7,7 +7,7 @@ public class Produto {
     private double preco;
     private boolean disponivel;
 
-    private static  int proximoId = 1;
+    private static  int proximoId = 0;
 
     public Produto(String nome, double preco, boolean disponivel) {
         this.id = proximoId;

@@ -32,7 +32,7 @@ public class RelatorioService {
 
         int r;
         do {
-            System.out.println("Menu Relatorio\n\nDigite a opcao desejada:\n1 - Listar Clientes\n2 - Listar Cardapio\n3 - Listar Pedidos\n0 - Sair\n");
+            IO.println("Menu Relatorio\n\nDigite a opcao desejada:\n1 - Listar Clientes\n2 - Listar Cardapio\n3 - Listar Pedidos\n0 - Sair\n");
 
             r = Integer.parseInt(IO.readln("Digite a opção desejada: "));
             switch (r) {
@@ -56,7 +56,7 @@ public class RelatorioService {
     public void listarCliente(){
 
         for (int i = 0; i < clienteService.getClientes().size(); i++) {
-            System.out.println("Classes.Cliente " + i + " " + clienteService.getClientes().get(i));
+            IO.println("Cliente " + i + " " + clienteService.getClientes().get(i));
             
         }
     }
@@ -64,7 +64,7 @@ public class RelatorioService {
     public void listarCardapio(){
 
         for (int i = 0; i < cardapioService.getProdutos().size(); i++) {
-            System.out.println("Classes.Produto " + i + " " + cardapioService.getProdutos().get(i));
+            IO.println("Produto " + i + " " + cardapioService.getProdutos().get(i));
 
         }
     }
@@ -78,17 +78,18 @@ public class RelatorioService {
             IO.println("Classes.Pedido " + (i + 1));
             IO.println("Classes.Cliente: " + pedido.getCliente().getNome());
             IO.println("Status: " + pedido.getStatus());
+            IO.println("Forma de pagamneto:" + pedido.getPagamento());
             IO.println("Total: R$ " + pedido.getTotal());
             IO.println("Itens:\n");
 
-            for (int j = 0; j < pedido.getItens().size(); j++) {
+            for (int r = 0; r < pedido.getItens().size(); r++) {
 
-                ProdutoPedido item = pedido.getItens().get(j);
+                ProdutoPedido item = pedido.getItens().get(r);
 
                 IO.println("- " +
                         item.getProduto().getNome() +
-                        " | Quantidade: " + item.getQuantidade() +
-                        " | Valor Unitário: R$ " + item.getProduto().getPreco());
+                        " Quantidade: " + item.getQuantidade() +
+                        " Valor Unitário: R$ " + item.getProduto().getPreco());
             }
         }
     }

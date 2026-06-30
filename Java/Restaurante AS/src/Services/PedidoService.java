@@ -1,8 +1,8 @@
 package Services;
-import Classes.Pedido;
-import Classes.Cliente;
-import Classes.ProdutoPedido;
-import Classes.Produto;
+import Classes.*;
+import Decorator.ExtraQueijo;
+import Factory.PedidoFactory;
+import Observer.ClienteObservador;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +59,7 @@ public class PedidoService {
             IO.println(clienteService.getClientes().get(i));
         }
 
-        int idCliente = Integer.parseInt(IO.readln("Qual o ID do Classes.Cliente? "));
+        int idCliente = Integer.parseInt(IO.readln("Qual o ID do Cliente? "));
 
         Cliente clienteEscolhido = null;
 
@@ -69,6 +69,18 @@ public class PedidoService {
                 break;
             }
         }
+
+        int tipoPedido;
+
+        do {
+            tipoPedido = Integer.parseInt(IO.readln(
+                    "\nTipo do pedido\n1 - Entrega\n2 - Retirada\n3 - Consumir no local\n"));
+
+            if (tipoPedido < 1 || tipoPedido > 3) {
+                IO.println("Opção incorreta, tente novamente.");
+            }
+
+        } while (tipoPedido < 1 || tipoPedido > 3);
 
         for (int i = 0; i < cardapioService.getProdutos().size(); i++) {
             IO.println(cardapioService.getProdutos().get(i));
@@ -91,6 +103,19 @@ public class PedidoService {
                 }
             }
 
+            int r2;
+
+            do {
+                r2 = Integer.parseInt(IO.readln("\nDeseja adicionar queijo extra?\n1 - Sim\n2 - Não\n"));
+
+                if (r2 == 1){
+                    produtoEscolhido = new ExtraQueijo(produtoEscolhido);
+                }
+                else if ( r2 != 2){
+                    IO.println("Opção incorreta, tente novamente.");
+                }
+            } while (r2 != 2);
+
             ProdutoPedido produtoPedido = new ProdutoPedido(produtoEscolhido, quantidade);
 
             itens.add(produtoPedido);
@@ -100,9 +125,36 @@ public class PedidoService {
 
         } while (r != 2);
 
+        Pagamento pagamento = null;
+
+        int r2;
+
+        do {
+
+            r2 = Integer.parseInt(IO.readln("\nForma de pagamento\n1 - PIX\n2 - Cartão\n3 - Dinheiro\n"));
+
+            switch (r2) {
+                case 1:
+                    pagamento = Pagamento.PIX;
+                    break;
+                case 2:
+                    pagamento = Pagamento.CARTAO;
+                    break;
+                case 3:
+                    pagamento = Pagamento.DINHEIRO;
+                    break;
+                default:
+                    IO.println("Opção incorreta, tente novamente.");
+
+            }
+
+        } while (pagamento == null);
+
         String status = "enviado a cozinha";
 
-        Pedido pedido = new Pedido(clienteEscolhido, itens, status, total);
+        Pedido pedido = PedidoFactory.criarPedido(tipoPedido, clienteEscolhido, itens, status, total, pagamento);
+
+        pedido.adicionarObservador(new ClienteObservador());
 
         pedidos.add(pedido);
     }

@@ -13,7 +13,7 @@ public class RestauranteService {
 
         int r;
         do {
-            System.out.println("Dom Juan's\n\nDigite a opcao desejada:\n1 - Menu Clientes\n2 - Menu Cardápio\n3 - Menu Classes.Pedido\n4 - Relatórios\n0 - Sair\n");
+            IO.println("Dom Juan's\n\nDigite a opcao desejada:\n1 - Menu Clientes\n2 - Menu Cardápio\n3 - Menu Pedido\n4 - Relatórios\n0 - Sair\n");
 
             r = Integer.parseInt(IO.readln("Digite a opção desejada: "));
             switch (r) {
@@ -32,7 +32,7 @@ public class RestauranteService {
                 case 0:
                     break;
                 default:
-                    System.out.println("Opção incorreta, tente novamente.");
+                    IO.println("Opção incorreta, tente novamente.");
                     break;
             }
         } while (r != 0);
