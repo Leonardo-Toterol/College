@@ -9,6 +9,7 @@ public class MeuVetor {
 
     // TODO 1: Implementar método para adicionar um elemento ao final
     public void adicionar(int elemento) {
+        garantirEspaco();
         for (int i = 0; i < elementos.length; i++) {
             if (elementos[i] == 0) {
                 elementos[i] = elemento;
@@ -21,14 +22,20 @@ public class MeuVetor {
     private void garantirEspaco() {
         if (tamanho == elementos.length ){
             int[] novoVetor = new int[elementos.length * 2];
+
+            for (int i = 0; i < elementos.length; i++) {
+                novoVetor[i] = elementos[i];
+            }
+            elementos = novoVetor;
         }
     }
 
     // TODO 3: Retornar o elemento de uma posição específica
     // Tratar erro se a posição for inválida!
     public int obter(int posicao) {
-        // Seu código aqui
-        return -1;
+        System.out.println("O Valor do indíce " + posicao + " é: " + elementos[posicao]);
+        System.out.println("\n");
+        return elementos[posicao];
     }
 
     // TODO 4: Remover elemento de uma posição
@@ -43,8 +50,9 @@ public class MeuVetor {
 
     public void listarVetor(){
         for (int i = 0; i < elementos.length; i++) {
-            System.out.println(elementos[i]);
+            System.out.println("Indice:" + i + " = " + elementos[i]);
         }
+        System.out.println("\n");
     }
 
     // ==================== DESAFIOS BÔNUS ====================
