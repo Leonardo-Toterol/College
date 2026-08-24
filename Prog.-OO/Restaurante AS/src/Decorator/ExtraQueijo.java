@@ -1,0 +1,21 @@
+package Decorator;
+
+import Classes.Produto;
+
+public class ExtraQueijo extends ProdutoDecorator {
+
+    public ExtraQueijo(Produto produto) {
+        super(produto);
+    }
+
+    @Override
+    public String getNome() {
+        return produto.getNome() + " + Queijo Extra";
+    }
+
+    @Override
+    public double getPreco() {
+        return produto.getPreco() + 3.00;
+    }
+
+}
