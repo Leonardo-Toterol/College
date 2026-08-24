@@ -1,0 +1,15 @@
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\obj\Debug\net10.0\Task7Exercicios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\obj\Debug\net10.0\Task7Exercicios.AssemblyInfoInputs.cache
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\obj\Debug\net10.0\Task7Exercicios.AssemblyInfo.cs
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\obj\Debug\net10.0\Task7Exercicios.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\obj\Debug\net10.0\Task7Exercicios.sourcelink.json
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\bin\Debug\net10.0\Task7Exercicios.exe
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\bin\Debug\net10.0\Task7Exercicios.deps.json
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\bin\Debug\net10.0\Task7Exercicios.runtimeconfig.json
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\bin\Debug\net10.0\Task7Exercicios.dll
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\bin\Debug\net10.0\Task7Exercicios.pdb
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\obj\Debug\net10.0\Task7Exercicios.dll
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\obj\Debug\net10.0\refint\Task7Exercicios.dll
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\obj\Debug\net10.0\Task7Exercicios.pdb
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\obj\Debug\net10.0\Task7Exercicios.genruntimeconfig.cache
+C:\Users\Leonardo\Desktop\Coding\Facul\backend\Task7Exercicios\obj\Debug\net10.0\ref\Task7Exercicios.dll

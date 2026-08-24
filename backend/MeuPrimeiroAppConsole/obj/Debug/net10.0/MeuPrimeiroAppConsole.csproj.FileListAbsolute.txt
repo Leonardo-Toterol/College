@@ -1,0 +1,14 @@
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\bin\Debug\net10.0\MeuPrimeiroAppConsole.exe
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\bin\Debug\net10.0\MeuPrimeiroAppConsole.deps.json
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\bin\Debug\net10.0\MeuPrimeiroAppConsole.runtimeconfig.json
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\bin\Debug\net10.0\MeuPrimeiroAppConsole.dll
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\bin\Debug\net10.0\MeuPrimeiroAppConsole.pdb
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\obj\Debug\net10.0\MeuPrimeiroAppConsole.GeneratedMSBuildEditorConfig.editorconfig
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\obj\Debug\net10.0\MeuPrimeiroAppConsole.AssemblyInfoInputs.cache
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\obj\Debug\net10.0\MeuPrimeiroAppConsole.AssemblyInfo.cs
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\obj\Debug\net10.0\MeuPrimeiroAppConsole.csproj.CoreCompileInputs.cache
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\obj\Debug\net10.0\MeuPrimeiroAppConsole.dll
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\obj\Debug\net10.0\refint\MeuPrimeiroAppConsole.dll
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\obj\Debug\net10.0\MeuPrimeiroAppConsole.pdb
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\obj\Debug\net10.0\MeuPrimeiroAppConsole.genruntimeconfig.cache
+F:\Coding\Projects\AS\MeuPrimeiroAppConsole\obj\Debug\net10.0\ref\MeuPrimeiroAppConsole.dll
