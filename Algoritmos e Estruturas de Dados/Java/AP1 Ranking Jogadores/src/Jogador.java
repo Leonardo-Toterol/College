@@ -1,4 +1,3 @@
-import java.io.IO;
 import java.util.Arrays;
 
 public class Jogador {
@@ -11,9 +10,19 @@ public class Jogador {
         this.pontos = new int[rodadas];
     }
 
-    public void adicionarJogador(Jogador jogador){
+    public void adicionarPontos(int rodada, int pontos){
 
-        String nome = IO.readln("Qual o nome do jogador? ");
+        this.pontos[rodada] = pontos;
+    }
+
+    public int getPontos(){
+
+        int total = 0;
+
+        for (int ponto : pontos){
+            total += ponto;
+        }
+        return total;
 
     }
 
@@ -23,14 +32,6 @@ public class Jogador {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public int[] getPontos() {
-        return pontos;
-    }
-
-    public void setPontos(int[] pontos) {
-        this.pontos = pontos;
     }
 
     @Override
