@@ -354,15 +354,12 @@ public class Ranking {
     public void insertionSort() {
 
         int[] pontuacoes = new int[tamanho];
-
-        // Calcula a pontuação total de cada jogador
         for (int i = 0; i < tamanho; i++) {
             for (int j = 0; j < torneio[i].length; j++) {
                 pontuacoes[i] += torneio[i][j];
             }
         }
 
-        // Insertion Sort
         for (int i = 1; i < tamanho; i++) {
 
             Jogador jogadorAtual = jogadores[i];
@@ -371,10 +368,8 @@ public class Ranking {
             int j = i - 1;
 
             while (j >= 0 && pontuacoes[j] < pontuacaoAtual) {
-
                 jogadores[j + 1] = jogadores[j];
                 pontuacoes[j + 1] = pontuacoes[j];
-
                 j--;
             }
 
@@ -382,16 +377,11 @@ public class Ranking {
             pontuacoes[j + 1] = pontuacaoAtual;
         }
 
-        // Exibe o ranking
         System.out.println("\nRanking ordenado com Insertion Sort");
 
         for (int i = 0; i < tamanho; i++) {
             System.out.printf(
-                    "%dº - %-12s %d pontos%n",
-                    i + 1,
-                    jogadores[i].getNome(),
-                    pontuacoes[i]
-            );
+                    "%dº - %-12s %d pontos%n", i + 1, jogadores[i].getNome(), pontuacoes[i]);
         }
     }
 }
