@@ -2,14 +2,18 @@ public class Main {
 
     public static void main(String[] args){
 
-        Pilha<Integer> pilha = new Pilha();
+        Fila fila = new Fila();
 
-        pilha.empilhar(3);
-        pilha.empilhar(5);
-        pilha.empilhar(7);
+        fila.enfileirar("Leo");
+        fila.enfileirar("Jorge");
+        fila.enfileirar("Pedro");
 
-        pilha.desempilhar();
+        fila.desenfileirar();
 
-        pilha.exibir();
+        fila.enfileirar("Rafael");
+
+        fila.exibir();
+
+        fila.primeiro();
     }
 }

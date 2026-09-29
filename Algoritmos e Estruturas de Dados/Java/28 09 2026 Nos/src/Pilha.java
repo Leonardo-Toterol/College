@@ -32,14 +32,21 @@ public class Pilha<T> {
             return;
         }
 
-        No atual = pilha;
-        No anterior = null;
-
-        while (atual != null){
-            anterior = atual;
-            atual = atual.getProximo();
+        if (pilha.getProximo() == null){
+            pilha = null;
         }
-        anterior.setProximo(atual.getProximo());
+        else {
+            No<T> noAtual = pilha;
+
+            while (noAtual.getProximo().getProximo() != null){
+                noAtual = noAtual.getProximo();
+            }
+
+            noAtual.setProximo(null);
+        }
+
+        tamanho--;
+
     }
 
     public int getTamanho(){
@@ -63,7 +70,36 @@ public class Pilha<T> {
                 atual = atual.getProximo();
             }
             System.out.println();
-            System.out.println(getTamanho());
         }
     }
+
+    public void topo(){
+        if (pilha == null){
+            System.out.println("Lista vazia.");
+        }
+        else {
+            No atual = pilha;
+
+            while (atual.getProximo() != null){
+                atual = atual.getProximo();
+            }
+            System.out.println(atual.getElemento());
+            System.out.println();
+        }
+    }
+
+/*Pilha<Integer> pilha = new Pilha();
+
+        pilha.empilhar(3);
+        pilha.empilhar(5);
+        pilha.empilhar(7);
+
+        pilha.desempilhar();
+
+        pilha.empilhar(7);
+        pilha.empilhar(9);
+
+        pilha.exibir();
+
+        pilha.topo();*/
 }
