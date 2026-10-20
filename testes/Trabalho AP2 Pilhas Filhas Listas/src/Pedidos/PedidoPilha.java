@@ -1,6 +1,7 @@
+package Pedidos;
 
 public class PedidoPilha {
-    private No topo;
+    private Node topo;
     private int tamanho;
 
     public PedidoPilha() {
@@ -10,10 +11,10 @@ public class PedidoPilha {
 
     public boolean empilhar(Pedido pedido) {
 
-        No novoNo = new No(pedido);
+        Node novoNode = new Node(pedido);
 
-        novoNo.setProximo(topo);
-        topo = novoNo;
+        novoNode.setProximo(topo);
+        topo = novoNode;
         tamanho++;
 
         return true;
@@ -32,21 +33,18 @@ public class PedidoPilha {
     }
 
     public void listar() {
-        No atual = topo;
+
+        Node atual = topo;
 
         if (estaVazia()) {
-            System.out.println("Não há pedidos cancelados.");
+            System.out.println("Sem pedido.");
             return;
         }
 
         while (atual != null) {
             Pedido pedido = atual.getPedido();
 
-            System.out.println(
-                    "ID: " + pedido.getId()
-                            + " - " + pedido.getPedido()
-            );
-
+            System.out.println("ID: " + pedido.getId() + " - " + pedido.getPedido() );
             atual = atual.getProximo();
         }
     }

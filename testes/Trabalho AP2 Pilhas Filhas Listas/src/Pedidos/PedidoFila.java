@@ -1,7 +1,8 @@
+package Pedidos;
 
 public class PedidoFila {
-    private No inicio;
-    private No fim;
+    private Node inicio;
+    private Node fim;
     private int tamanho;
 
     public PedidoFila() {
@@ -11,14 +12,14 @@ public class PedidoFila {
     }
 
     public boolean enfileirar(Pedido pedido) {
-        No novoNo = new No(pedido);
+        Node novoNode = new Node(pedido);
 
         if (estaVazia()) {
-            inicio = novoNo;
-            fim = novoNo;
+            inicio = novoNode;
+            fim = novoNode;
         } else {
-            fim.setProximo(novoNo);
-            fim = novoNo;
+            fim.setProximo(novoNode);
+            fim = novoNode;
         }
 
         tamanho++;
@@ -26,6 +27,7 @@ public class PedidoFila {
     }
 
     public Pedido desenfileirar() {
+
         if (estaVazia()) {
             return null;
         }
@@ -43,20 +45,16 @@ public class PedidoFila {
 
     public void listar() {
         if (estaVazia()) {
-            System.out.println("Não há pedidos pendentes.");
+            System.out.println("Sem pedidos.");
             return;
         }
 
-        No atual = inicio;
+        Node atual = inicio;
 
         while (atual != null) {
             Pedido pedido = atual.getPedido();
 
-            System.out.println(
-                    "ID: " + pedido.getId()
-                            + " - " + pedido.getPedido()
-            );
-
+            System.out.println("ID: " + pedido.getId() + " - " + pedido.getPedido() );
             atual = atual.getProximo();
         }
     }

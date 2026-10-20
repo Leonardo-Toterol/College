@@ -1,9 +1,10 @@
+package Pedidos;
 
-public class No {
+public class Node {
     private Pedido pedido;
-    private No proximo;
+    private Node proximo;
 
-    public No(Pedido pedido) {
+    public Node(Pedido pedido) {
         this.pedido = pedido;
         this.proximo = null;
     }
@@ -12,11 +13,11 @@ public class No {
         return pedido;
     }
 
-    public No getProximo() {
+    public Node getProximo() {
         return proximo;
     }
 
-    public void setProximo(No proximo) {
+    public void setProximo(Node proximo) {
         this.proximo = proximo;
     }
 }

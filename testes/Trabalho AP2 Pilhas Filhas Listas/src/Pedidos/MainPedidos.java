@@ -1,3 +1,5 @@
+package Pedidos;
+
 import java.util.Scanner;
 
 public class MainPedidos {
@@ -12,19 +14,19 @@ public class MainPedidos {
 
     Scanner scanner = new Scanner(System.in);
 
-    public void iniciar() {
+    public void inicio() {
 
         int opcao;
 
         do {
             System.out.println("\n Maid Café");
-            System.out.println("1 - Adicionar novo pedido");
-            System.out.println("2 - Atender pedido");
-            System.out.println("3 - Cancelar pedido");
-            System.out.println("4 - Restaurar pedido cancelado");
-            System.out.println("5 - Listar pedidos pendentes");
-            System.out.println("6 - Listar pedidos cancelados");
-            System.out.println("0 - Sair");
+            System.out.println("1 Adicionar novo pedido");
+            System.out.println("2 Atender pedido");
+            System.out.println("3 Cancelar pedido");
+            System.out.println("4 Restaurar pedido cancleado");
+            System.out.println("5 Listar pedidos pendentes");
+            System.out.println("6 Listar pedidos cancelados");
+            System.out.println("0 Sair");
             System.out.print("Escolha uma opção: \n");
 
             opcao = scanner.nextInt();
@@ -50,10 +52,9 @@ public class MainPedidos {
                     pedidoPilha.listar();
                     break;
                 case 0:
-                    System.out.println("Encerrando o programa...");
                     break;
                 default:
-                    System.out.println("Opção inválida!");
+                    System.out.println("Opção incorreta.");
             }
 
         } while (opcao != 0);
@@ -76,13 +77,9 @@ public class MainPedidos {
         Pedido pedidoAtendido = pedidoFila.desenfileirar();
 
         if (pedidoAtendido != null) {
-            System.out.println(
-                    "O pedido " + pedidoAtendido.getId()
-                            + " - " + pedidoAtendido.getPedido()
-                            + " foi atendido."
-            );
+            System.out.println("O pedido " + pedidoAtendido.getId() + " - " + pedidoAtendido.getPedido() + " foi atendido.");
         } else {
-            System.out.println("Não há pedidos para atender.");
+            System.out.println("Sem pedidos.");
         }
     }
 
@@ -93,13 +90,9 @@ public class MainPedidos {
         if (pedidoRemovido != null) {
             pedidoPilha.empilhar(pedidoRemovido);
 
-            System.out.println(
-                    "O pedido " + pedidoRemovido.getId()
-                            + " - " + pedidoRemovido.getPedido()
-                            + " foi cancelado."
-            );
+            System.out.println("O pedido " + pedidoRemovido.getId() + " - " + pedidoRemovido.getPedido() + " foi cancelado");
         } else {
-            System.out.println("Não há pedidos para cancelar.");
+            System.out.println("Sem pedidos.");
         }
     }
 
@@ -110,13 +103,9 @@ public class MainPedidos {
         if (pedidoCancelado != null) {
             pedidoFila.enfileirar(pedidoCancelado);
 
-            System.out.println(
-                    "O pedido " + pedidoCancelado.getId()
-                            + " - " + pedidoCancelado.getPedido()
-                            + " foi restaurado."
-            );
+            System.out.println("O pedido " + pedidoCancelado.getId() + " - " + pedidoCancelado.getPedido() + " foi restaurado.");
         } else {
-            System.out.println("Não há pedidos cancelados para restaurar.");
+            System.out.println("Sem pedido");
         }
     }
 

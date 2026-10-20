@@ -1,3 +1,5 @@
+package Pedidos;
+
 public class Pedido {
 
     private String pedido;
